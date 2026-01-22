@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Netflix-inspired dark theme for Catalyst */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Catalyst Red - Netflix inspired */
+    --primary: 0 91% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 91% 43%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --netflix-red: 0 91% 43%;
+    --netflix-black: 0 0% 5%;
+    --netflix-dark: 0 0% 8%;
+    --netflix-gray: 0 0% 45%;
+    --netflix-light: 0 0% 85%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(to right, hsl(0 0% 5%) 0%, transparent 60%);
+    --gradient-hero-bottom: linear-gradient(to top, hsl(0 0% 5%) 0%, transparent 100%);
+    --gradient-card: linear-gradient(to top, hsl(0 0% 0% / 0.9) 0%, transparent 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.5);
+    --shadow-card-hover: 0 8px 40px hsl(0 0% 0% / 0.8);
+
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 91% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 91% 43%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 91% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 91% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  /* Hide scrollbar for horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .netflix-button {
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-2 rounded-sm 
+           hover:bg-primary/90 transition-all duration-200;
+  }
+
+  .netflix-button-secondary {
+    @apply bg-secondary/80 text-foreground font-semibold px-6 py-2 rounded-sm 
+           hover:bg-secondary transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .netflix-card {
+    @apply relative rounded-sm overflow-hidden cursor-pointer 
+           transition-all duration-300 ease-out;
+  }
+
+  .netflix-card:hover {
+    @apply scale-110 z-20;
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .netflix-row-title {
+    @apply text-xl md:text-2xl font-bold text-foreground mb-3 px-4 md:px-12;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0;
+  }
+
+  .gradient-overlay {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-bottom {
+    background: var(--gradient-hero-bottom);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 8px hsl(0 0% 0% / 0.8);
+  }
+}
