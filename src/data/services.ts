@@ -98,8 +98,7 @@ export const cloudScaleServices: CatalystService[] = [
     image: "https://zoho.com/sites/zweb/images/catalyst/stratus_launch_announcement.jpg",
     category: "Object Storage",
     match: 94,
-    badge: "Early Access",
-    features: [ "All file formats", "Folder permissions", "Direct downloads", "SDK access"High throughput", "Presigned URLs", "Version control", "Metadata support"],
+    features: ["All file formats", "Folder permissions","Direct downloads","SDK access","High throughput","Presigned URLs","Version control","Metadata support"],
     docsUrl: "https://catalyst.zoho.com/stratus.html?src=header",
   },
   {
