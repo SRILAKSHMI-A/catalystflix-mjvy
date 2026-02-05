@@ -207,7 +207,7 @@ export const devToolsServices: CatalystService[] = [
     category: "ML Platform",
     match: 96,
     features: ["No-code interface", "Classification & regression", "Model deployment", "AutoML"],
-    docsUrl: https://catalyst.zoho.com/quickml.html?src=header",
+    docsUrl: "https://catalyst.zoho.com/quickml.html",
   },
   {
     id: "smartbrowz",
