@@ -34,7 +34,7 @@ export const serverlessServices: CatalystService[] = [
     "Seamless Catalyst integration"
   ],
   docsUrl: "https://catalyst.zoho.com/slate/index.html?src=header"
-}
+},
 
   {
     id: "functions",
