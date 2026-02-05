@@ -20,10 +20,27 @@ export interface TopTenService {
 // Serverless & Compute Services
 export const serverlessServices: CatalystService[] = [
   {
+  id: "slate",
+  title: "Slate",
+  description: "Host and deploy modern frontend applications with global CDN support, custom domains, and seamless integration with Catalyst backend services.",
+  image: "https://docs.catalyst.zoho.com/images/help/slate/slate-starter-template.webp",
+  category: "Frontend & Hosting",
+  match: 94,
+  features: [
+    "Static web hosting",
+    "Global CDN",
+    "Custom domains",
+    "HTTPS by default",
+    "Seamless Catalyst integration"
+  ],
+  docsUrl: "https://catalyst.zoho.com/slate/index.html?src=header"
+}
+
+  {
     id: "functions",
     title: "Functions",
     description: "Execute backend logic without managing servers. Write code in Java, Node.js, or Python and let Catalyst handle the infrastructure.",
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&q=80",
+    image: "https://zdblogs.zohowebstatic.com/sites/catalyst/blog/files/users/user901/blog%20submission-21.jpg",
     category: "Serverless",
     match: 99,
     features: ["Java, Node.js, Python support", "Auto-scaling", "Event-driven execution", "Built-in logging"],
@@ -44,21 +61,21 @@ export const serverlessServices: CatalystService[] = [
     id: "circuits",
     title: "Circuits",
     description: "Orchestrate multi-step processes and manage business logic visually.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80",
+    image: "https://docs.catalyst.zoho.com/images/help/circuits/catalyst_circuits_graph_1.webp",
     category: "Workflows",
     match: 95,
     features: ["Visual workflow builder", "State management", "Error handling", "Parallel execution"],
-    docsUrl: "https://catalyst.zoho.com/help/circuits",
+    docsUrl: "https://docs.catalyst.zoho.com/en/serverless/help/circuits/introduction/",
   },
   {
-    id: "cron",
-    title: "Cron Jobs",
+    id: "job scheduler",
+    title: "Job Scheduling",
     description: "Schedule recurring tasks to run at specific intervals. Automate background processes without manual intervention.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&q=80",
+    image: "https://docs.catalyst.zoho.com/images/help/job-scheduling/catalyst_job_scheduling_jobs_home_page_list.webp",
     category: "Scheduling",
     match: 93,
     features: ["Flexible scheduling", "Timezone support", "Execution logs", "Retry policies"],
-    docsUrl: "https://catalyst.zoho.com/help/cron",
+    docsUrl: "https://docs.catalyst.zoho.com/en/job-scheduling/",
   },
 ];
 
@@ -68,42 +85,32 @@ export const cloudScaleServices: CatalystService[] = [
     id: "datastore",
     title: "Data Store",
     description: "A cloud-based relational database for storing persistent application data. Scale seamlessly with built-in reliability.",
-    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&q=80",
+    image: "https://zoho.com/sites/zweb/images/catalyst/zoho-app-storage.png",
     category: "Database",
     match: 98,
     features: ["Relational tables", "ZCQL queries", "Auto-scaling", "Role-based access"],
-    docsUrl: "https://catalyst.zoho.com/help/data-store",
-  },
-  {
-    id: "filestore",
-    title: "File Store",
-    description: "Cloud storage for images, videos, and documents. Organize files in folders with folder-level permissions.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80",
-    category: "Storage",
-    match: 96,
-    features: ["All file formats", "Folder permissions", "Direct downloads", "SDK access"],
-    docsUrl: "https://catalyst.zoho.com/help/file-store",
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/data-store/introduction/",
   },
   {
     id: "stratus",
     title: "Stratus",
-    description: "High-performance object storage for modern applications. A significant upgrade to File Store with enhanced capabilities.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80",
+    description: "High-performance object storage for modern applications.Cloud storage for images, videos, and documents. Organize files in folders with folder-level permissions.",
+    image: "https://zoho.com/sites/zweb/images/catalyst/stratus_launch_announcement.jpg",
     category: "Object Storage",
     match: 94,
     badge: "Early Access",
-    features: ["High throughput", "Presigned URLs", "Version control", "Metadata support"],
-    docsUrl: "https://catalyst.zoho.com/help/stratus",
+    features: [ "All file formats", "Folder permissions", "Direct downloads", "SDK access"High throughput", "Presigned URLs", "Version control", "Metadata support"],
+    docsUrl: "https://catalyst.zoho.com/stratus.html?src=header",
   },
   {
     id: "cache",
     title: "Cache",
     description: "Lightning-fast key-value store for frequently accessed data. Reduce database load and improve response times.",
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&q=80",
+    image: "https://docs.catalyst.zoho.com/en/cloud-scale/help/cache/introduction/",
     category: "Caching",
     match: 92,
     features: ["Key-value pairs", "TTL support", "Segment isolation", "Instant retrieval"],
-    docsUrl: "https://catalyst.zoho.com/help/cache",
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/cache/introduction/",
   },
   {
     id: "zcql",
@@ -113,31 +120,31 @@ export const cloudScaleServices: CatalystService[] = [
     category: "Query",
     match: 97,
     features: ["SQL-like syntax", "Join operations", "Aggregations", "Search integration"],
-    docsUrl: "https://catalyst.zoho.com/help/zcql",
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/zcql/introduction/",
   },
   {
     id: "nosql",
     title: "NoSQL",
     description: "Schema-less database for flexible data modeling. Perfect for applications with evolving data structures.",
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&q=80",
+    image: "https://zoho.com/sites/zweb/images/catalyst/new_option_final.jpg",
     category: "Database",
     match: 91,
     features: ["Schema-less", "Flexible modeling", "Index support", "Fast queries"],
-    docsUrl: "https://catalyst.zoho.com/help/nosql",
+    docsUrl: "https://catalyst.zoho.com/nosql.html?src=header",
   },
 ];
 
-// Zia Intelligence Services
+// Zia Services
 export const ziaServices: CatalystService[] = [
   {
     id: "ocr",
-    title: "Zia OCR",
+    title: "Zia OCR ",
     description: "Extract text from images and documents with AI-powered optical character recognition.",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80",
     category: "AI Vision",
     match: 98,
     features: ["Multi-language support", "Handwriting recognition", "Document parsing", "High accuracy"],
-    docsUrl: "https://catalyst.zoho.com/help/zia-ocr",
+    docsUrl: "https://catalyst.zoho.com/zia-services.html?src=header",
   },
   {
     id: "faceanalytics",
@@ -147,7 +154,7 @@ export const ziaServices: CatalystService[] = [
     category: "AI Vision",
     match: 95,
     features: ["Face detection", "Age estimation", "Emotion analysis", "Gender detection"],
-    docsUrl: "https://catalyst.zoho.com/help/face-analytics",
+    docsUrl: "https://docs.catalyst.zoho.com/en/zia-services/help/face-analytics/introduction/",
   },
   {
     id: "objectrecognition",
@@ -157,7 +164,7 @@ export const ziaServices: CatalystService[] = [
     category: "AI Vision",
     match: 94,
     features: ["1000+ object categories", "Confidence scores", "Multi-object detection", "Fast processing"],
-    docsUrl: "https://catalyst.zoho.com/help/object-recognition",
+    docsUrl: "https://docs.catalyst.zoho.com/en/zia-services/help/object-recognition/introduction/",
   },
   {
     id: "imagemoderation",
@@ -167,7 +174,7 @@ export const ziaServices: CatalystService[] = [
     category: "AI Safety",
     match: 97,
     features: ["NSFW detection", "Violence detection", "Content scoring", "Auto-flagging"],
-    docsUrl: "https://catalyst.zoho.com/help/image-moderation",
+    docsUrl: "https://docs.catalyst.zoho.com/en/zia-services/help/image-moderation/introduction/",
   },
   {
     id: "barcodescanner",
@@ -177,7 +184,7 @@ export const ziaServices: CatalystService[] = [
     category: "AI Vision",
     match: 93,
     features: ["QR codes", "Multiple formats", "Batch scanning", "Fast decoding"],
-    docsUrl: "https://catalyst.zoho.com/help/barcode-scanner",
+    docsUrl: "https://docs.catalyst.zoho.com/en/zia-services/help/barcode-scanner/introduction/",
   },
   {
     id: "textanalytics",
@@ -187,7 +194,7 @@ export const ziaServices: CatalystService[] = [
     category: "AI NLP",
     match: 96,
     features: ["Sentiment analysis", "Named entity recognition", "Keyword extraction", "Multi-language"],
-    docsUrl: "https://catalyst.zoho.com/help/text-analytics",
+    docsUrl: "https://docs.catalyst.zoho.com/en/zia-services/help/text-analytics/introduction/",
   },
 ];
 
@@ -197,11 +204,11 @@ export const devToolsServices: CatalystService[] = [
     id: "quickml",
     title: "QuickML",
     description: "Build, train, and deploy machine learning models without writing code. No-code ML for everyone.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&q=80",
+    image: "https://www.zohowebstatic.com/sites/zweb/images/catalyst/ml-quickml.jpg",
     category: "ML Platform",
     match: 96,
     features: ["No-code interface", "Classification & regression", "Model deployment", "AutoML"],
-    docsUrl: "https://catalyst.zoho.com/help/quickml",
+    docsUrl: https://catalyst.zoho.com/quickml.html?src=header",
   },
   {
     id: "smartbrowz",
@@ -211,7 +218,7 @@ export const devToolsServices: CatalystService[] = [
     category: "Automation",
     match: 94,
     features: ["Screenshot capture", "PDF generation", "Browser grid", "Test automation"],
-    docsUrl: "https://catalyst.zoho.com/help/smartbrowz",
+    docsUrl: "https://catalyst.zoho.com/smartbrowz.html?src=header",
   },
   {
     id: "convokraft",
@@ -221,7 +228,7 @@ export const devToolsServices: CatalystService[] = [
     category: "Chatbots",
     match: 95,
     features: ["SmartTrain", "Custom training", "Multi-channel", "Context awareness"],
-    docsUrl: "https://catalyst.zoho.com/help/convokraft",
+    docsUrl: "https://catalyst.zoho.com/convokraft.html?src=header",
   },
   {
     id: "authentication",
@@ -231,7 +238,7 @@ export const devToolsServices: CatalystService[] = [
     category: "Security",
     match: 99,
     features: ["User management", "Password reset", "Session handling", "Role-based access"],
-    docsUrl: "https://catalyst.zoho.com/help/authentication",
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/authentication/introduction/",
   },
   {
     id: "pushnotifications",
@@ -240,8 +247,8 @@ export const devToolsServices: CatalystService[] = [
     image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&q=80",
     category: "Messaging",
     match: 92,
-    features: ["Web, iOS, Android", "Scheduled sends", "Rich notifications", "Analytics"],
-    docsUrl: "https://catalyst.zoho.com/help/push-notifications",
+    features: ["Web, iOS, Android", "Scheduled sends", "notifications", "Analytics"],
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/push-notifications/introduction/",
   },
   {
     id: "mail",
@@ -251,22 +258,22 @@ export const devToolsServices: CatalystService[] = [
     category: "Communication",
     match: 94,
     features: ["HTML emails", "Attachments", "Delivery tracking", "Templates"],
-    docsUrl: "https://catalyst.zoho.com/help/mail",
+    docsUrl: "https://docs.catalyst.zoho.com/en/cloud-scale/help/mail/introduction/",
   },
 ];
 
 // Top 10 Most Popular Services
 export const topTenServices: TopTenService[] = [
-  { rank: 1, title: "Functions", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=200&q=80", id: "functions" },
-  { rank: 2, title: "Data Store", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=200&q=80", id: "datastore" },
-  { rank: 3, title: "Authentication", image: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?w=200&q=80", id: "authentication" },
-  { rank: 4, title: "AppSail", image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=200&q=80", id: "appsail" },
-  { rank: 5, title: "File Store", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&q=80", id: "filestore" },
-  { rank: 6, title: "Circuits", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&q=80", id: "circuits" },
-  { rank: 7, title: "QuickML", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&q=80", id: "quickml" },
-  { rank: 8, title: "ZCQL", image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=200&q=80", id: "zcql" },
-  { rank: 9, title: "Zia OCR", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=200&q=80", id: "ocr" },
-  { rank: 10, title: "ConvoKraft", image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=200&q=80", id: "convokraft" },
+  { rank: 1, title: "Slate", image: "https://docs.catalyst.zoho.com/images/help/slate/slate-starter-template.webp", id: "slate" },
+  { rank: 2, title: "Functions", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=200&q=80", id: "functions" },
+  { rank: 3, title: "Data Store", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=200&q=80", id: "datastore" },
+  { rank: 4, title: "Authentication", image: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?w=200&q=80", id: "authentication" },
+  { rank: 5, title: "AppSail", image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=200&q=80", id: "appsail" },
+  { rank: 6, title: "Stratus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&q=80", id: "filestore" },
+  { rank: 7, title: "Circuits", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&q=80", id: "circuits" },
+  { rank: 8, title: "QuickML", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&q=80", id: "quickml" },
+  { rank: 9, title: "ZCQL", image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=200&q=80", id: "zcql" },
+  { rank: 10, title: "Zia OCR", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=200&q=80", id: "ocr" },
 ];
 
 // Helper to find any service by ID
