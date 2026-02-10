@@ -98,7 +98,7 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
               className="netflix-button flex items-center gap-2"
             >
               <Play className="w-5 h-5 fill-current" />
-              <span>Get Started Free</span>
+              <span></span>
             </button>
             <button 
               onClick={handleMoreInfo}
