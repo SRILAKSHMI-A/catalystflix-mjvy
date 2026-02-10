@@ -23,7 +23,7 @@ export const serverlessServices: CatalystService[] = [
   id: "slate",
   title: "Slate",
   description: "Host and deploy modern frontend applications with global CDN support, custom domains, and seamless integration with Catalyst backend services.",
-  image: "https://docs.catalyst.zoho.com/images/help/slate/slate-starter-template.webp",
+  image: "https://media.licdn.com/dms/image/v2/D5622AQEsiZYEIEDZpA/feedshare-shrink_800/B56ZmfrSYGJsAg-/0/1759320549933?e=1772064000&v=beta&t=n6yX1XoSN4Opi6KP05H7wDa69suKi2NTFM6HSHPzuzQ",
   category: "Frontend & Hosting",
   match: 94,
   features: [
@@ -105,7 +105,7 @@ export const cloudScaleServices: CatalystService[] = [
     id: "cache",
     title: "Cache",
     description: "Lightning-fast key-value store for frequently accessed data. Reduce database load and improve response times.",
-    image: "https://docs.catalyst.zoho.com/en/cloud-scale/help/cache/introduction/",
+    image: "https://media.licdn.com/dms/image/v2/D5622AQESaKPxHAcgyg/feedshare-shrink_800/B56Zrir9ThHAAg-/0/1764739766620?e=1772064000&v=beta&t=oNIqVrrVRkEC0a0pPGej2LkVNKDBpFg854Lku0zXzGc",
     category: "Caching",
     match: 92,
     features: ["Key-value pairs", "TTL support", "Segment isolation", "Instant retrieval"],
