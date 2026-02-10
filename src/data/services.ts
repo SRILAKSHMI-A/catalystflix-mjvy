@@ -270,7 +270,7 @@ export const topTenServices: TopTenService[] = [
   { rank: 5, title: "AppSail", image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=200&q=80", id: "appsail" },
   { rank: 6, title: "Stratus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&q=80", id: "filestore" },
   { rank: 7, title: "Circuits", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&q=80", id: "circuits" },
-  { rank: 8, title: "QuickML", image: https://unsplash.com/photos/a-computer-keyboard-sitting-on-top-of-a-computer-mouse-AMAYQqzQYaI", id: "quickml" },
+  { rank: 8, title: "QuickML", image: "https://unsplash.com/photos/a-computer-keyboard-sitting-on-top-of-a-computer-mouse-AMAYQqzQYaI", id: "quickml" },
   { rank: 9, title: "ZCQL", image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=200&q=80", id: "zcql" },
   { rank: 10, title: "Zia OCR", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=200&q=80", id: "ocr" },
 ];
