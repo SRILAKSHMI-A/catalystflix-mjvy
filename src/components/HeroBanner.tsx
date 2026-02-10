@@ -105,7 +105,7 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
               className="netflix-button-secondary flex items-center gap-2"
             >
               <Info className="w-5 h-5" />
-              <span>More Info</span>
+              
             </button>
             <a 
               href="https://catalyst.zoho.com" 
@@ -114,7 +114,7 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
               className="hidden md:flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              <span>Visit Catalyst</span>
+              
             </a>
           </div>
         </div>
