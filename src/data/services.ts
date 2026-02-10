@@ -265,12 +265,12 @@ export const devToolsServices: CatalystService[] = [
 export const topTenServices: TopTenService[] = [
   { rank: 1, title: "Slate", image: "https://docs.catalyst.zoho.com/images/help/slate/slate-starter-template.webp", id: "slate" },
   { rank: 2, title: "Functions", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=200&q=80", id: "functions" },
-  { rank: 3, title: "Data Store", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=200&q=80", id: "datastore" },
+  { rank: 3, title: "Data Store", image: "https://plus.unsplash.com/premium_photo-1683120968693-9af51578770e?q=80&w=663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", id: "datastore" },
   { rank: 4, title: "Authentication", image: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?w=200&q=80", id: "authentication" },
   { rank: 5, title: "AppSail", image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=200&q=80", id: "appsail" },
   { rank: 6, title: "Stratus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&q=80", id: "filestore" },
   { rank: 7, title: "Circuits", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&q=80", id: "circuits" },
-  { rank: 8, title: "QuickML", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&q=80", id: "quickml" },
+  { rank: 8, title: "QuickML", image: https://unsplash.com/photos/a-computer-keyboard-sitting-on-top-of-a-computer-mouse-AMAYQqzQYaI", id: "quickml" },
   { rank: 9, title: "ZCQL", image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=200&q=80", id: "zcql" },
   { rank: 10, title: "Zia OCR", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=200&q=80", id: "ocr" },
 ];
