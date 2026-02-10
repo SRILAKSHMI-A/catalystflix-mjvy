@@ -14,10 +14,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", url: "https://catalyst.zoho.com" },
-    { label: "Services", url: "https://catalyst.zoho.com/features.html" },
-    { label: "Solutions", url: "https://catalyst.zoho.com/solutions" },
+    { label: "Services", url: "https://catalyst.zoho.com/" },
+    { label: "Solutions", url: "https://catalyst.zoho.com/" },
     { label: "Pricing", url: "https://catalyst.zoho.com/pricing.html" },
-    { label: "Resources", url: "https://catalyst.zoho.com/resources" },
+    { label: "Resources", url: "https://docs.catalyst.zoho.com/en/tutorials/" },
   ];
 
   return (
