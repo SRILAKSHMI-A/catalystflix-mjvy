@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroBanner from "@/components/HeroBanner";
 import ContentRow from "@/components/ContentRow";
 import TopTenRow from "@/components/TopTenRow";
-import Footer from "@/components/Footer";
 import ServiceDetailModal from "@/components/ServiceDetailModal";
 import {
   serverlessServices,
