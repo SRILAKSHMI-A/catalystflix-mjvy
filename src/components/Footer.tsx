@@ -1,12 +1,7 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
-  const footerLinks = [
-    ["FAQ", "Investor Relations", "Privacy", "Speed Test"],
-    ["Help Center", "Jobs", "Cookie Preferences", "Legal Notices"],
-    ["Account", "Ways to Watch", "Corporate Information", "Only on Catalyst"],
-    ["Media Center", "Terms of Use", "Contact Us", "API Documentation"],
-  ];
+
 
   return (
     <footer className="bg-background px-4 md:px-12 py-12 mt-12">
