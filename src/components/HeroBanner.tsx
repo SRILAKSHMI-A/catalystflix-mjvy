@@ -18,7 +18,7 @@ const featuredServices = [
     title: "CLOUD\nSCALE",
     subtitle: "Data Store",
     description: "Store and manage your application data with our powerful relational database. Built for reliability and scale with ZCQL query language support.",
-    image: "https://pixabay.com/photos/network-server-system-2402637/",
+    image: "https://plus.unsplash.com/premium_photo-1733306493254-52b143296396?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     service: cloudScaleServices[0],
   },
   {
