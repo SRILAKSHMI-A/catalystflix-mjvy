@@ -92,21 +92,7 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
           </p>
 
           {/* Buttons */}
-          <div className="flex items-center gap-4">
-            <button 
-              onClick={handleGetStarted}
-              className="netflix-button flex items-center gap-2"
-            >
-              <Play className="w-5 h-5 fill-current" />
-              <span></span>
-            </button>
-            <button 
-              onClick={handleMoreInfo}
-              className="netflix-button-secondary flex items-center gap-2"
-            >
-              <Info className="w-5 h-5" />
-              
-            </button>
+         
             <a 
               href="https://catalyst.zoho.com" 
               target="_blank" 
