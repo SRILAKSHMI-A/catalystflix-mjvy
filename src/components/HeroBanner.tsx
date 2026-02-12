@@ -1,6 +1,11 @@
-import { Play, Info, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
-import { CatalystService, serverlessServices, cloudScaleServices, ziaServices } from "@/data/services";
+import {
+  CatalystService,
+  serverlessServices,
+  cloudScaleServices,
+  ziaServices,
+} from "@/data/services";
 
 interface HeroBannerProps {
   onServiceSelect: (service: CatalystService) => void;
@@ -10,22 +15,28 @@ const featuredServices = [
   {
     title: "SERVERLESS\nPLATFORM",
     subtitle: "Functions",
-    description: "Build, deploy, and scale applications without managing infrastructure. Catalyst provides a complete serverless environment with functions, databases, authentication, and more.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    description:
+      "Build, deploy, and scale applications without managing infrastructure. Catalyst provides a complete serverless environment with functions, databases, authentication, and more.",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
     service: serverlessServices[0],
   },
   {
     title: "CLOUD\nSCALE",
     subtitle: "Data Store",
-    description: "Store and manage your application data with our powerful relational database. Built for reliability and scale with ZCQL query language support.",
-    image: "https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=1786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Store and manage your application data with our powerful relational database. Built for reliability and scale with ZCQL query language support.",
+    image:
+      "https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=1786&auto=format&fit=crop",
     service: cloudScaleServices[0],
   },
   {
     title: "ZIA AI\nSERVICES",
     subtitle: "Intelligence",
-    description: "Add AI capabilities to your apps with OCR, face analytics, image moderation, and text analytics. Powered by Zoho's Zia artificial intelligence.",
-    image: "https://images.unsplash.com/photo-1739036868260-c26b292cd85d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Add AI capabilities to your apps with OCR, face analytics, image moderation, and text analytics. Powered by Zoho's Zia artificial intelligence.",
+    image:
+      "https://images.unsplash.com/photo-1739036868260-c26b292cd85d?q=80&w=1932&auto=format&fit=crop",
     service: ziaServices[0],
   },
 ];
@@ -48,32 +59,30 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
 
   const current = featuredServices[currentIndex];
 
-  const handleGetStarted = () => {
-    window.open("https://catalyst.zoho.com/signup.html", "_blank");
-  };
-
-  const handleMoreInfo = () => {
-    onServiceSelect(current.service);
-  };
-
   return (
     <div className="relative h-[85vh] w-full overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
-        style={{
-          backgroundImage: `url('${current.image}')`,
-        }}
+      {/* Background */}
+      <div
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
+          isTransitioning ? "opacity-0" : "opacity-100"
+        }`}
+        style={{ backgroundImage: `url('${current.image}')` }}
       />
-      
-      {/* Gradient Overlays */}
+
+      {/* Overlays */}
       <div className="absolute inset-0 gradient-overlay" />
       <div className="absolute bottom-0 left-0 right-0 h-40 gradient-bottom" />
-      
+
       {/* Content */}
       <div className="relative h-full flex items-center px-4 md:px-12">
-        <div className={`max-w-2xl transition-all duration-500 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
-          {/* Top Badge */}
+        <div
+          className={`max-w-2xl transition-all duration-500 ${
+            isTransitioning
+              ? "opacity-0 translate-y-4"
+              : "opacity-100 translate-y-0"
+          }`}
+        >
+          {/* Badge */}
           <div className="flex items-center gap-2 mb-4">
             <span className="text-primary font-display text-2xl">C</span>
             <span className="text-sm font-medium tracking-widest text-muted-foreground uppercase">
@@ -82,7 +91,7 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
           </div>
 
           {/* Title */}
-          <h1 className="font-display text-6xl md:text-8xl text-foreground mb-4 text-shadow whitespace-pre-line">
+          <h1 className="font-display text-6xl md:text-8xl mb-4 whitespace-pre-line">
             {current.title}
           </h1>
 
@@ -91,22 +100,20 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
             {current.description}
           </p>
 
-          {/* Buttons */}
-         
-            <a 
-              href="https://catalyst.zoho.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-              
-            </a>
-          </div>
+          {/* External Link */}
+          <a
+            href="https://catalyst.zoho.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            Explore Catalyst
+          </a>
         </div>
       </div>
 
-      {/* Carousel Indicators */}
+      {/* Indicators */}
       <div className="absolute bottom-32 left-4 md:left-12 flex gap-2">
         {featuredServices.map((_, index) => (
           <button
@@ -119,9 +126,9 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
               }, 500);
             }}
             className={`h-1 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'w-8 bg-primary' 
-                : 'w-4 bg-muted-foreground/50 hover:bg-muted-foreground'
+              index === currentIndex
+                ? "w-8 bg-primary"
+                : "w-4 bg-muted-foreground/50 hover:bg-muted-foreground"
             }`}
           />
         ))}
@@ -131,3 +138,4 @@ const HeroBanner = ({ onServiceSelect }: HeroBannerProps) => {
 };
 
 export default HeroBanner;
+
