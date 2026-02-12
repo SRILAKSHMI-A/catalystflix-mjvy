@@ -4,7 +4,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Check } from "lucide-react";
+import { Play, Check, ExternalLink } from "lucide-react";
 import { CatalystService } from "@/data/services";
 
 interface ServiceDetailModalProps {
@@ -20,6 +20,14 @@ const ServiceDetailModal = ({
 }: ServiceDetailModalProps) => {
   if (!service) return null;
 
+  const handleGetStarted = () => {
+    window.open("https://catalyst.zoho.com/signup.html", "_blank");
+  };
+
+  const handleViewDocs = () => {
+    window.open(service.docsUrl, "_blank");
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl p-0 overflow-hidden bg-card border-border">
@@ -32,13 +40,32 @@ const ServiceDetailModal = ({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
 
-          {/* Title Overlay */}
+          {/* Title + Buttons Overlay */}
           <div className="absolute bottom-4 left-6 right-6">
             <DialogHeader>
               <DialogTitle className="font-display text-4xl text-foreground">
                 {service.title}
               </DialogTitle>
             </DialogHeader>
+
+            {/* Action Buttons (ONLY THESE TWO) */}
+            <div className="flex items-center gap-3 mt-4">
+              <button
+                onClick={handleGetStarted}
+                className="netflix-button flex items-center gap-2"
+              >
+                <Play className="w-5 h-5 fill-current" />
+                <span>Get Started Free</span>
+              </button>
+
+              <button
+                onClick={handleViewDocs}
+                className="netflix-button-secondary flex items-center gap-2"
+              >
+                <ExternalLink className="w-5 h-5" />
+                <span>View Docs</span>
+              </button>
+            </div>
           </div>
 
           {/* Badge */}
@@ -96,3 +123,4 @@ const ServiceDetailModal = ({
 };
 
 export default ServiceDetailModal;
+
