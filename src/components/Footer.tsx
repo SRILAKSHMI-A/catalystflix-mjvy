@@ -60,7 +60,7 @@ const Footer = () => {
 
       {/* Service Code */}
       <button className="text-sm text-muted-foreground border border-muted-foreground px-4 py-2 mb-6 hover:text-foreground hover:border-foreground transition-colors">
-        Service Code
+       
       </button>
     </footer>
   );
