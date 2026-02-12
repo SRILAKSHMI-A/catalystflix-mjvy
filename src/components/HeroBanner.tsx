@@ -18,14 +18,14 @@ const featuredServices = [
     title: "CLOUD\nSCALE",
     subtitle: "Data Store",
     description: "Store and manage your application data with our powerful relational database. Built for reliability and scale with ZCQL query language support.",
-    image: "https://plus.unsplash.com/premium_photo-1733306493254-52b143296396?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=1786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     service: cloudScaleServices[0],
   },
   {
     title: "ZIA AI\nSERVICES",
     subtitle: "Intelligence",
     description: "Add AI capabilities to your apps with OCR, face analytics, image moderation, and text analytics. Powered by Zoho's Zia artificial intelligence.",
-    image: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1739036868260-c26b292cd85d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     service: ziaServices[0],
   },
 ];
