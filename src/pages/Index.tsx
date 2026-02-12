@@ -31,11 +31,13 @@ const Index = () => {
       <HeroBanner onServiceSelect={handleServiceSelect} />
       
       <div className="-mt-32 relative z-10 space-y-2">
-        <ContentRow 
-          title="Serverless & Compute" 
-          services={serverlessServices} 
-          onServiceSelect={handleServiceSelect}
-        />
+       <div className="mt-6">
+  <ContentRow 
+    title="Serverless & Compute" 
+    services={serverlessServices} 
+    onServiceSelect={handleServiceSelect}
+  />
+</div>
         <TopTenRow 
           services={topTenServices} 
           onServiceSelect={handleServiceSelect}
