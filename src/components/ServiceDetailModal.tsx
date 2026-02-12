@@ -28,6 +28,10 @@ const ServiceDetailModal = ({
     window.open(service.docsUrl, "_blank");
   };
 
+  const handleExploreCatalyst = () => {
+    window.open("https://catalyst.zoho.com", "_blank");
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl p-0 overflow-hidden bg-card border-border">
@@ -40,7 +44,7 @@ const ServiceDetailModal = ({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
 
-          {/* Title + Buttons Overlay */}
+          {/* Title + Top Action Buttons */}
           <div className="absolute bottom-4 left-6 right-6">
             <DialogHeader>
               <DialogTitle className="font-display text-4xl text-foreground">
@@ -48,7 +52,7 @@ const ServiceDetailModal = ({
               </DialogTitle>
             </DialogHeader>
 
-            {/* Action Buttons (ONLY THESE TWO) */}
+            {/* Action Buttons */}
             <div className="flex items-center gap-3 mt-4">
               <button
                 onClick={handleGetStarted}
@@ -116,6 +120,23 @@ const ServiceDetailModal = ({
               ))}
             </div>
           </div>
+
+          {/* Footer CTA Buttons */}
+          <div className="flex items-center gap-4 pt-4 border-t border-border">
+            <button
+              onClick={handleExploreCatalyst}
+              className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-semibold transition-colors"
+            >
+              Explore All Catalyst Services
+            </button>
+
+            <button
+              onClick={handleGetStarted}
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
+            >
+              Start Building Now
+            </button>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
@@ -123,4 +144,3 @@ const ServiceDetailModal = ({
 };
 
 export default ServiceDetailModal;
-
