@@ -1,110 +1,167 @@
-import { Play, Plus, ThumbsUp, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Play, Check, ExternalLink } from "lucide-react";
 import { CatalystService } from "@/data/services";
+import { useState } from "react";
 
-interface ServiceCardProps {
-  service: CatalystService;
-  onSelect: (service: CatalystService) => void;
+interface ServiceDetailModalProps {
+  service: CatalystService | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-const ServiceCard = ({ service, onSelect }: ServiceCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+const ServiceDetailModal = ({
+  service,
+  open,
+  onOpenChange,
+}: ServiceDetailModalProps) => {
+  const [showVideo, setShowVideo] = useState(false);
 
-  const handleClick = () => {
-    onSelect(service);
-  };
+  if (!service) return null;
 
-  const handleGetStarted = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleGetStarted = () => {
     window.open("https://catalyst.zoho.com/signup.html", "_blank");
   };
 
+  const handleViewDocs = () => {
+    window.open(service.docsUrl, "_blank");
+  };
+
+  const handleExploreCatalyst = () => {
+    window.open("https://catalyst.zoho.com", "_blank");
+  };
+
   return (
-    <div
-      className="netflix-card flex-shrink-0 w-[250px] md:w-[300px] aspect-video group cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
-    >
-      {/* Card Image */}
-      <div className="relative w-full h-full">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-full object-cover rounded-sm"
-        />
-        
-        {/* Badge */}
-        {service.badge && (
-          <div className="absolute top-2 right-2">
-            <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded text-xs font-semibold">
-              {service.badge}
-            </span>
-          </div>
-        )}
-        
-        {/* Title overlay when not hovered */}
-        {!isHovered && (
-          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
-            <h3 className="text-foreground font-semibold text-sm">{service.title}</h3>
-          </div>
-        )}
-        
-        {/* Hover Overlay */}
-        {isHovered && (
-          <div className="absolute inset-0 bg-card rounded-sm animate-scale-in shadow-2xl">
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-3xl p-0 overflow-hidden bg-card border-border">
+        {/* Hero Section */}
+        <div
+          className="relative h-64 w-full"
+          onMouseEnter={() => setShowVideo(true)}
+          onMouseLeave={() => setShowVideo(false)}
+        >
+          {/* Video (only if exists) */}
+          {service.videoUrl && showVideo ? (
+            <video
+              src={service.videoUrl}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-1/2 object-cover rounded-t-sm"
+              className="w-full h-full object-cover"
             />
-            
-            <div className="p-4">
-              {/* Action Buttons */}
-              <div className="flex items-center gap-2 mb-3">
-                <button 
-                  onClick={handleGetStarted}
-                  className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center hover:bg-foreground/80 transition-colors"
-                >
-                  <Play className="w-4 h-4 text-background fill-current" />
-                </button>
-                <button className="w-8 h-8 rounded-full border-2 border-muted-foreground flex items-center justify-center hover:border-foreground transition-colors">
-                  <Plus className="w-4 h-4 text-foreground" />
-                </button>
-                <button className="w-8 h-8 rounded-full border-2 border-muted-foreground flex items-center justify-center hover:border-foreground transition-colors">
-                  <ThumbsUp className="w-4 h-4 text-foreground" />
-                </button>
-                <button className="w-8 h-8 rounded-full border-2 border-muted-foreground flex items-center justify-center hover:border-foreground transition-colors ml-auto">
-                  <ChevronDown className="w-4 h-4 text-foreground" />
-                </button>
-              </div>
+          )}
 
-              {/* Title */}
-              <h3 className="text-foreground font-semibold mb-2">{service.title}</h3>
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
 
-              {/* Info */}
-              <div className="flex items-center gap-2 text-xs mb-2">
-                <span className="text-green-500 font-semibold">{service.match}% Match</span>
-                <span className="border border-muted-foreground px-1 text-muted-foreground">HD</span>
-                {service.badge && (
-                  <span className="bg-primary/20 text-primary px-1 text-[10px] rounded">{service.badge}</span>
-                )}
-              </div>
+          {/* Title + Buttons */}
+          <div className="absolute bottom-4 left-6 right-6">
+            <DialogHeader>
+              <DialogTitle className="font-display text-4xl text-foreground">
+                {service.title}
+              </DialogTitle>
+            </DialogHeader>
 
-              {/* Tags */}
-              <div className="flex items-center gap-2 text-xs text-foreground/80">
-                <span>{service.category}</span>
-                <span className="text-muted-foreground">•</span>
-                <span>API Ready</span>
-                <span className="text-muted-foreground">•</span>
-                <span>Scalable</span>
-              </div>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-3 mt-4">
+              <button
+                onClick={handleGetStarted}
+                className="netflix-button flex items-center gap-2"
+              >
+                <Play className="w-5 h-5 fill-current" />
+                <span>Get Started Free</span>
+              </button>
+
+              <button
+                onClick={handleViewDocs}
+                className="netflix-button-secondary flex items-center gap-2"
+              >
+                <ExternalLink className="w-5 h-5" />
+                <span>View Docs</span>
+              </button>
             </div>
           </div>
-        )}
-      </div>
-    </div>
+
+          {/* Badge */}
+          {service.badge && (
+            <div className="absolute top-4 right-4">
+              <span className="bg-primary text-primary-foreground px-3 py-1 rounded text-sm font-semibold">
+                {service.badge}
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="p-6 space-y-6">
+          {/* Meta */}
+          <div className="flex items-center gap-4 text-sm">
+            <span className="text-green-500 font-bold">
+              {service.match}% Match
+            </span>
+            <span className="border border-muted-foreground px-2 py-0.5 text-muted-foreground">
+              {service.category}
+            </span>
+            <span className="text-muted-foreground">Enterprise Ready</span>
+            <span className="border border-muted-foreground px-2 py-0.5 text-muted-foreground">
+              HD
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="text-foreground/90 text-lg leading-relaxed">
+            {service.description}
+          </p>
+
+          {/* Features */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-3">
+              Key Features
+            </h4>
+            <div className="grid grid-cols-2 gap-3">
+              {service.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-foreground/80"
+                >
+                  <Check className="w-4 h-4 text-green-500" />
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="flex items-center gap-4 pt-4 border-t border-border">
+            <button
+              onClick={handleExploreCatalyst}
+              className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-semibold transition-colors"
+            >
+              Explore All Catalyst Services
+            </button>
+
+            <button
+              onClick={handleGetStarted}
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
+            >
+              Start Building Now
+            </button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
-export default ServiceCard;
+export default ServiceDetailModal;
+
