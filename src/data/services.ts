@@ -23,14 +23,13 @@ export interface TopTenService {
    ========================= */
 
 export const serverlessServices: CatalystService[] = [
-  // 🔥 Priority services (front)
+  /* 🔥 Priority services (always first) */
   {
     id: "authentication",
     title: "Authentication",
     description:
       "Secure user authentication with built-in login, signup, social auth, and role-based access.",
     image: "https://zoho.com/sites/zweb/images/catalyst/authentication.png",
-    video: "https://your-video-link.mp4",
     category: "Security",
     match: 99,
     features: [
@@ -49,7 +48,6 @@ export const serverlessServices: CatalystService[] = [
       "Deploy full-stack and containerized applications with zero DevOps overhead.",
     image:
       "https://zoho.com/sites/zweb/images/catalyst/cutom-runtime-appsail.png",
-    video: "https://your-video-link.mp4",
     category: "PaaS",
     match: 97,
     features: [
@@ -68,7 +66,6 @@ export const serverlessServices: CatalystService[] = [
       "Visually orchestrate workflows and manage complex multi-step logic.",
     image:
       "https://docs.catalyst.zoho.com/images/help/circuits/catalyst_circuits_graph_1.webp",
-    video: "https://your-video-link.mp4",
     category: "Workflows",
     match: 95,
     features: [
@@ -86,7 +83,6 @@ export const serverlessServices: CatalystService[] = [
     description:
       "A scalable, fully managed relational database for structured application data.",
     image: "https://zoho.com/sites/zweb/images/catalyst/zoho-app-storage.png",
-    video: "https://your-video-link.mp4",
     category: "Database",
     match: 98,
     features: [
@@ -99,7 +95,7 @@ export const serverlessServices: CatalystService[] = [
       "https://docs.catalyst.zoho.com/en/cloud-scale/help/data-store/introduction/",
   },
 
-  // Others
+  /* Other services */
   {
     id: "functions",
     title: "Functions",
@@ -182,11 +178,38 @@ export const ziaServices: CatalystService[] = [
    ========================= */
 
 export const topTenServices: TopTenService[] = [
-  { rank: 1, title: "Authentication", image: "https://zoho.com/sites/zweb/images/catalyst/authentication.png", id: "authentication" },
-  { rank: 2, title: "AppSail", image: "https://zoho.com/sites/zweb/images/catalyst/cutom-runtime-appsail.png", id: "appsail" },
-  { rank: 3, title: "Data Store", image: "https://zoho.com/sites/zweb/images/catalyst/zoho-app-storage.png", id: "datastore" },
-  { rank: 4, title: "Circuits", image: "https://docs.catalyst.zoho.com/images/help/circuits/catalyst_circuits_graph_1.webp", id: "circuits" },
-  { rank: 5, title: "Functions", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=200&q=80", id: "functions" },
+  {
+    rank: 1,
+    title: "Authentication",
+    image: "https://zoho.com/sites/zweb/images/catalyst/authentication.png",
+    id: "authentication",
+  },
+  {
+    rank: 2,
+    title: "AppSail",
+    image: "https://zoho.com/sites/zweb/images/catalyst/cutom-runtime-appsail.png",
+    id: "appsail",
+  },
+  {
+    rank: 3,
+    title: "Circuits",
+    image:
+      "https://docs.catalyst.zoho.com/images/help/circuits/catalyst_circuits_graph_1.webp",
+    id: "circuits",
+  },
+  {
+    rank: 4,
+    title: "Data Store",
+    image: "https://zoho.com/sites/zweb/images/catalyst/zoho-app-storage.png",
+    id: "datastore",
+  },
+  {
+    rank: 5,
+    title: "Functions",
+    image:
+      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=200&q=80",
+    id: "functions",
+  },
 ];
 
 /* =========================
@@ -202,4 +225,5 @@ export const getServiceById = (
   id: string
 ): CatalystService | undefined =>
   getAllServices().find((service) => service.id === id);
+
 
