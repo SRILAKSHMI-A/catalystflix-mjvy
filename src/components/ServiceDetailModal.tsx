@@ -132,3 +132,4 @@ const ServiceDetailModal = ({ service, open, onOpenChange }: ServiceDetailModalP
 
 export default ServiceDetailModal;
 
+
