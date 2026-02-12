@@ -4,7 +4,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Play, Plus, ThumbsUp, Share2, Check, ExternalLink } from "lucide-react";
+import { Check } from "lucide-react";
 import { CatalystService } from "@/data/services";
 
 interface ServiceDetailModalProps {
@@ -13,20 +13,12 @@ interface ServiceDetailModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const ServiceDetailModal = ({ service, open, onOpenChange }: ServiceDetailModalProps) => {
+const ServiceDetailModal = ({
+  service,
+  open,
+  onOpenChange,
+}: ServiceDetailModalProps) => {
   if (!service) return null;
-
-  const handleGetStarted = () => {
-    window.open("https://catalyst.zoho.com/signup.html", "_blank");
-  };
-
-  const handleViewDocs = () => {
-    window.open(service.docsUrl, "_blank");
-  };
-
-  const handleExploreCatalyst = () => {
-    window.open("https://catalyst.zoho.com", "_blank");
-  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -39,32 +31,14 @@ const ServiceDetailModal = ({ service, open, onOpenChange }: ServiceDetailModalP
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-          
+
           {/* Title Overlay */}
           <div className="absolute bottom-4 left-6 right-6">
             <DialogHeader>
-              <DialogTitle className="font-display text-4xl text-foreground text-shadow">
+              <DialogTitle className="font-display text-4xl text-foreground">
                 {service.title}
               </DialogTitle>
             </DialogHeader>
-            
-            {/* Action Buttons */}
-            <div className="flex items-center gap-3 mt-4">
-              <button 
-                onClick={handleGetStarted}
-                className="netflix-button flex items-center gap-2"
-              >
-                <Play className="w-5 h-5 fill-current" />
-                <span>Get Started Free</span>
-              </button>
-              <button 
-                onClick={handleViewDocs}
-                className="netflix-button-secondary flex items-center gap-2"
-              >
-                <ExternalLink className="w-5 h-5" />
-                <span>View Docs</span>
-              
-            </div>
           </div>
 
           {/* Badge */}
@@ -81,7 +55,9 @@ const ServiceDetailModal = ({ service, open, onOpenChange }: ServiceDetailModalP
         <div className="p-6 space-y-6">
           {/* Meta Info */}
           <div className="flex items-center gap-4 text-sm">
-            <span className="text-green-500 font-bold">{service.match}% Match</span>
+            <span className="text-green-500 font-bold">
+              {service.match}% Match
+            </span>
             <span className="border border-muted-foreground px-2 py-0.5 text-muted-foreground">
               {service.category}
             </span>
@@ -98,31 +74,20 @@ const ServiceDetailModal = ({ service, open, onOpenChange }: ServiceDetailModalP
 
           {/* Features */}
           <div>
-            <h4 className="text-foreground font-semibold mb-3">Key Features</h4>
+            <h4 className="text-foreground font-semibold mb-3">
+              Key Features
+            </h4>
             <div className="grid grid-cols-2 gap-3">
               {service.features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-foreground/80">
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-foreground/80"
+                >
                   <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="flex items-center gap-4 pt-4 border-t border-border">
-            <button 
-              onClick={handleExploreCatalyst}
-              className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary py-3 rounded-lg font-semibold transition-colors"
-            >
-              Explore All Catalyst Services
-            </button>
-            <button 
-              onClick={handleGetStarted}
-              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
-            >
-              Start Building Now
-            </button>
           </div>
         </div>
       </DialogContent>
